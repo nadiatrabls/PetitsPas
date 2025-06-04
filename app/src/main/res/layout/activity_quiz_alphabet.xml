@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF5FF">
+
+    <!-- Question -->
+    <TextView
+        android:id="@+id/questionText"
+        android:text="Quel est ce chiffre ?"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Score -->
+    <TextView
+        android:id="@+id/scoreText"
+        android:text="Score : 0/20"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <!-- Propositions -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp">
+
+        <ImageView
+            android:id="@+id/imgOption1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/imgOption2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <ImageView
+            android:id="@+id/imgOption3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- Récompense étoiles -->
+    <LinearLayout
+        android:id="@+id/starLayout"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/etoile1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/star_off" />
+
+        <ImageView
+            android:id="@+id/etoile2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/star_off" />
+
+        <ImageView
+            android:id="@+id/etoile3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/star_off" />
+    </LinearLayout>
+
+    <!-- Bouton retour -->
+    <Button
+        android:id="@+id/btnRetourMenu"
+        android:text="Retour au menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="24dp" />
+</LinearLayout>
