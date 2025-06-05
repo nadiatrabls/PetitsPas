@@ -20,5 +20,14 @@
     <string name="dix_huit">18</string>
     <string name="dix_neuf">19</string>
     <string name="vingt">20</string>
+    <string name="quiz_question">Quel est ce chiffre ?</string>
+    <string name="quiz_score_default">Score : 0</string>
+    <string name="retour_menu">Retour au menu</string>
+    <string name="option_btn">Option du quiz</string>
+    <string name="etoile_score">Étoile de score</string>
+    <string name="image_du_chiffre">Image représentant un chiffre</string>
+    <string name="btn_ecouter">🔊 Écouter</string>
+    <string name="image_mot_alphabet">Image illustrant un mot commençant par une lettre</string>
+
 
 </resources>

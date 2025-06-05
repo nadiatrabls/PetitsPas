@@ -63,17 +63,21 @@ public class AlphabetActivity extends AppCompatActivity {
         btnSuivant = findViewById(R.id.btnSuivant);
         btnPrecedent = findViewById(R.id.btnPrecedent);
 
+        // 🔁 Restaurer l'état après rotation
+        if (savedInstanceState != null) {
+            index = savedInstanceState.getInt("index", 0);
+        }
+
         afficherLettre();
 
         btnSuivant.setOnClickListener(v -> {
             if (index == lettres.length - 1) {
-                // Afficher la dernière lettre, puis lancer le quiz
                 afficherLettre();
                 new Handler().postDelayed(() -> {
                     Intent intent = new Intent(AlphabetActivity.this, QuizAlphabetActivity.class);
                     startActivity(intent);
                     finish();
-                }, 2000); // délai de 2 secondes
+                }, 2000);
             } else {
                 index++;
                 afficherLettre();
@@ -95,5 +99,12 @@ public class AlphabetActivity extends AppCompatActivity {
         txtLettre.setText(lettres[index]);
         txtMot.setText("comme " + mots[index]);
         imgMot.setImageResource(images[index]);
+    }
+
+    // ✅ Sauvegarde de l'état
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("index", index);
     }
 }

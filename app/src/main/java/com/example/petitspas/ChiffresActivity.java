@@ -49,6 +49,10 @@ public class ChiffresActivity extends AppCompatActivity {
         btnSuivant = findViewById(R.id.btnSuivant);
         btnPrecedent = findViewById(R.id.btnPrecedent);
 
+        if (savedInstanceState != null) {
+            index = savedInstanceState.getInt("index", 0);
+        }
+
         afficherChiffre();
 
         btnSon.setOnClickListener(v -> MediaPlayer.create(this, sons[index]).start());
@@ -58,7 +62,6 @@ public class ChiffresActivity extends AppCompatActivity {
             if (index < chiffres.length) {
                 afficherChiffre();
             } else {
-                // Fin des chiffres → démarrer le quiz
                 Intent intent = new Intent(ChiffresActivity.this, QuizChiffresActivity.class);
                 startActivity(intent);
                 finish();
@@ -71,6 +74,12 @@ public class ChiffresActivity extends AppCompatActivity {
                 afficherChiffre();
             }
         });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("index", index);
     }
 
     private void afficherChiffre() {

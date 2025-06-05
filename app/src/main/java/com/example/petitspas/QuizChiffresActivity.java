@@ -50,6 +50,12 @@ public class QuizChiffresActivity extends AppCompatActivity {
             finish();
         });
 
+        // 🔁 Restaurer l’état si rotation
+        if (savedInstanceState != null) {
+            currentIndex = savedInstanceState.getInt("currentIndex", 0);
+            score = savedInstanceState.getInt("score", 0);
+        }
+
         afficherQuestion();
     }
 
@@ -60,7 +66,7 @@ public class QuizChiffresActivity extends AppCompatActivity {
         }
 
         imgChiffre.setImageResource(chiffreImages[currentIndex]);
-        bonneValeur = currentIndex + 1; // ex : image chiffre_1.png → valeur 1
+        bonneValeur = currentIndex + 1; // Exemple : image chiffre_1 → valeur 1
 
         scoreText.setText("Score : " + score + "/20");
         questionText.setText("Combien vois-tu ?");
@@ -114,5 +120,13 @@ public class QuizChiffresActivity extends AppCompatActivity {
             array[i] = array[j];
             array[j] = tmp;
         }
+    }
+
+    // ✅ Sauvegarde de l’état (rotation écran)
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("currentIndex", currentIndex);
+        outState.putInt("score", score);
     }
 }

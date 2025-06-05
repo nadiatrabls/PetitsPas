@@ -67,7 +67,6 @@ public class QuizAlphabetActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_alphabet);
 
-        // Liaison des vues
         questionText = findViewById(R.id.questionText);
         scoreText = findViewById(R.id.scoreText);
         image1 = findViewById(R.id.imgOption1);
@@ -78,7 +77,13 @@ public class QuizAlphabetActivity extends AppCompatActivity {
         etoile3 = findViewById(R.id.etoile3);
         btnRetourMenu = findViewById(R.id.btnRetourMenu);
 
-        btnRetourMenu.setVisibility(View.GONE); // Cacher le bouton au début
+        btnRetourMenu.setVisibility(View.GONE);
+
+        // 🔁 Restaurer l'état si rotation
+        if (savedInstanceState != null) {
+            currentIndex = savedInstanceState.getInt("currentIndex", 0);
+            score = savedInstanceState.getInt("score", 0);
+        }
 
         btnRetourMenu.setOnClickListener(v -> {
             Intent intent = new Intent(QuizAlphabetActivity.this, MainActivity.class);
@@ -145,5 +150,13 @@ public class QuizAlphabetActivity extends AppCompatActivity {
         etoile1.setImageResource(score >= 8 ? R.drawable.star_on : R.drawable.star_off);
         etoile2.setImageResource(score >= 16 ? R.drawable.star_on : R.drawable.star_off);
         etoile3.setImageResource(score == lettres.length ? R.drawable.star_on : R.drawable.star_off);
+    }
+
+    // ✅ Sauvegarde de l’état (rotation écran)
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("currentIndex", currentIndex);
+        outState.putInt("score", score);
     }
 }
