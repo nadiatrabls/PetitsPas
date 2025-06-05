@@ -3,12 +3,9 @@ package com.example.petitspas;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -61,27 +58,23 @@ public class ChiffresActivity extends AppCompatActivity {
             if (index < chiffres.length) {
                 afficherChiffre();
             } else {
-                Toast.makeText(this, "🎉 C’est parti pour le quiz !", Toast.LENGTH_SHORT).show();
-
-                // Attendre 1,5 secondes puis lancer le quiz
-                new Handler().postDelayed(() -> lancerQuizChiffres(), 1500);
+                // Fin des chiffres → démarrer le quiz
+                Intent intent = new Intent(ChiffresActivity.this, QuizChiffresActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
         btnPrecedent.setOnClickListener(v -> {
-            index = (index - 1 + chiffres.length) % chiffres.length;
-            afficherChiffre();
+            if (index > 0) {
+                index--;
+                afficherChiffre();
+            }
         });
     }
 
     private void afficherChiffre() {
         txtChiffre.setText(getString(chiffres[index]));
         imgChiffre.setImageResource(images[index]);
-    }
-
-    private void lancerQuizChiffres() {
-        Intent intent = new Intent(ChiffresActivity.this, QuizChiffresActivity.class);
-        startActivity(intent);
-        finish();
     }
 }

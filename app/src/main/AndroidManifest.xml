@@ -29,6 +29,8 @@
         <activity android:name=".QuizAlphabetActivity" android:exported="false" />
         <!-- Nouvelle activité : chiffres -->
         <activity android:name=".ChiffresActivity" android:exported="false" />
+        <!-- Nouvelle activité : quizchiffres -->
+        <activity android:name=".QuizChiffresActivity" />
 
     </application>
 
