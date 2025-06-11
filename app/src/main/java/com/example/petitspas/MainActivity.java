@@ -17,10 +17,7 @@ public class MainActivity extends AppCompatActivity {
         // Boutons
         Button btnAlphabet = findViewById(R.id.btnAlphabet);
         Button btnChiffres = findViewById(R.id.btnChiffres);
-        Button btnSyllabes = findViewById(R.id.btnSyllabes);
-        Button btnVocabulaire = findViewById(R.id.btnVocabulaire);
-        Button btnOrdreImages = findViewById(R.id.btnOrdreImages);
-        Button btnRecompenses = findViewById(R.id.btnRecompenses);
+
 
         // ✅ Lancer AlphabetActivity
         btnAlphabet.setOnClickListener(view -> {
@@ -33,17 +30,5 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-
-        btnSyllabes.setOnClickListener(view ->
-                Toast.makeText(this, "Module Syllabes à venir", Toast.LENGTH_SHORT).show());
-
-        btnVocabulaire.setOnClickListener(view ->
-                Toast.makeText(this, "Module Vocabulaire à venir", Toast.LENGTH_SHORT).show());
-
-        btnOrdreImages.setOnClickListener(view ->
-                Toast.makeText(this, "Module Ordre des Images à venir", Toast.LENGTH_SHORT).show());
-
-        btnRecompenses.setOnClickListener(view ->
-                Toast.makeText(this, "Module Récompenses à venir", Toast.LENGTH_SHORT).show());
     }
 }

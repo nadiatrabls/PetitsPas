@@ -31,33 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp" />
 
-        <Button
-            android:id="@+id/btnSyllabes"
-            android:text="Syllabes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp" />
 
-        <Button
-            android:id="@+id/btnVocabulaire"
-            android:text="Vocabulaire"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp" />
-
-        <Button
-            android:id="@+id/btnOrdreImages"
-            android:text="Ordonner les images"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp" />
-
-        <Button
-            android:id="@+id/btnRecompenses"
-            android:text="Mes étoiles"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp" />
 
     </LinearLayout>
 </ScrollView>
