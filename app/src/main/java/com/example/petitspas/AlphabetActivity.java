@@ -50,7 +50,10 @@ public class AlphabetActivity extends AppCompatActivity {
     TextView txtLettre, txtMot;
     ImageView imgMot;
     Button btnSon, btnSuivant, btnPrecedent;
-
+//La méthode onCreate() est le point d’entrée principal de chaque activité
+    //Rôle de onCreate:
+    //Initialiser l’activité , au lancement de l'appli pour definie le layout et lier les composants xml au java
+    //Restaurer l’état si rotation:
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,13 +66,13 @@ public class AlphabetActivity extends AppCompatActivity {
         btnSuivant = findViewById(R.id.btnSuivant);
         btnPrecedent = findViewById(R.id.btnPrecedent);
 
-        // 🔁 Restaurer l'état après rotation
+        // Restaurer l'état après rotation: permet de revenir à la même lettre ou au même chiffre qu’avant la rotation
         if (savedInstanceState != null) {
             index = savedInstanceState.getInt("index", 0);
         }
 
         afficherLettre();
-
+//comportement du bouton Suivant
         btnSuivant.setOnClickListener(v -> {
             if (index == lettres.length - 1) {
                 afficherLettre();
@@ -83,7 +86,7 @@ public class AlphabetActivity extends AppCompatActivity {
                 afficherLettre();
             }
         });
-
+//comportement du bouton prev
         btnPrecedent.setOnClickListener(v -> {
             index = (index - 1 < 0) ? lettres.length - 1 : index - 1;
             afficherLettre();

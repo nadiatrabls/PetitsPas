@@ -17,9 +17,10 @@ public class MainActivity extends AppCompatActivity {
         // Bouttons
         Button btnAlphabet = findViewById(R.id.btnAlphabet);
         Button btnChiffres = findViewById(R.id.btnChiffres);
+        Button btnQuizAlphabet = findViewById(R.id.btnQuizAlphabet);
+        Button btnQuizChiffres = findViewById(R.id.btnQuizChiffres);
 
 
-        // ✅ Lancer AlphabetActivity
         btnAlphabet.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, AlphabetActivity.class);
             startActivity(intent);
@@ -29,6 +30,14 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, ChiffresActivity.class);
             startActivity(intent);
         });
+        btnQuizAlphabet.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, QuizAlphabetActivity.class);
+            startActivity(intent);
+        });
 
+        btnQuizChiffres.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, QuizChiffresActivity.class);
+            startActivity(intent);
+        });
     }
 }

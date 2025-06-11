@@ -30,6 +30,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp" />
+        <Button
+            android:id="@+id/btnQuizAlphabet"
+            android:text="Quiz Alphabet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btnQuizChiffres"
+            android:text="Quiz Chiffres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
 
 
 
