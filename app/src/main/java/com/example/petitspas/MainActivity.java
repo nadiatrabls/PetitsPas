@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Bout
+        // Bouttons
         Button btnAlphabet = findViewById(R.id.btnAlphabet);
         Button btnChiffres = findViewById(R.id.btnChiffres);
 
